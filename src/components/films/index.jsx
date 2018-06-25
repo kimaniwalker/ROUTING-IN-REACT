@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import FilmsList from '../filmsList';
+
 
 const Base_URL = 'https://ghibliapi.herokuapp.com/films';
 
@@ -8,6 +8,7 @@ class Films extends Component {
             super(props);
             this.state= {
                 data: [],
+               
             }
 
         }
@@ -17,15 +18,17 @@ class Films extends Component {
             <Fragment>
             {this.state.data.map((res) => {
                    return (
-                       <div className="card-header"> key={res.title}>
-                       <div className="card-body"> key={res.id}>
+                       <div className="card" key={res.id}> 
+                       <div className="card-header">{res.title}
+                       <div className="card-body"> {res.id}
                        
+                       </div>
                        </div>
                        </div>
                    ) 
                 })}
             
-            <FilmsList />
+            
             </Fragment>
         )
     }
