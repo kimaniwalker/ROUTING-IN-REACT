@@ -17,8 +17,9 @@ class Films extends Component {
             <Fragment>
             {this.state.data.map((res) => {
                    return (
-                       <div className="card-header" key={res.id}>
-                       <div className="card-body" key={res.title}>
+                       <div className="card-header"> key={res.title}>
+                       <div className="card-body"> key={res.id}>
+                       
                        </div>
                        </div>
                    ) 
