@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
+import FilmsList from '../filmsList';
 
-const Base_URL = 'https://ghibliapi.herokuapp.com/films';
 
 
 class Films extends Component {
@@ -14,14 +14,7 @@ class Films extends Component {
     }
     
     componentDidMount() {
-     fetch(`${Base_URL}`)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(list) {
-    console.log(list);
-    
-  });
+    <FilmsList />
     }
 }
 
