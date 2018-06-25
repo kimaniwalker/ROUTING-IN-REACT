@@ -1,21 +1,48 @@
 import React, {Component, Fragment} from 'react';
 import FilmsList from '../filmsList';
 
-
+const Base_URL = 'https://ghibliapi.herokuapp.com/films';
 
 class Films extends Component {
+        constructor(props){
+            super(props);
+            this.state= {
+                data: [],
+            }
+
+        }
+
     render() {
         return(
             <Fragment>
-            <h1> This is the films page</h1>
+            {this.state.data.map((res) => {
+                   return (
+                       <div className="card-header" key={res.id}>
+                       <div className="card-body" key={res.title}>
+                       </div>
+                       </div>
+                   ) 
+                })}
             
+            <FilmsList />
             </Fragment>
         )
     }
     
     componentDidMount() {
-    <FilmsList />
-    }
+        fetch(`${Base_URL}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((res) => {
+        this.setState({
+            data: res
+        });
+        
+      });
+    
+      
+        }
 }
 
 export default Films;
