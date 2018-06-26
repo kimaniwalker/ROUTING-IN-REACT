@@ -22,10 +22,12 @@ class Films extends Component {
                         <div className="card text-white bg-primary" key={res.id}>
                             <div className="card-header">{res.title}
                                 <div className="card-body"> {res.id}
+                                <div className="card-body"> {res.description}
 
                                     <Link  className="btn btn-danger"  to={`/films/${res.id}`}>  MORE INFO </Link>
 
 
+                                </div>
                                 </div>
                             </div>
                         </div>
