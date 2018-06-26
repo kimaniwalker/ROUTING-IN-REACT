@@ -4,6 +4,7 @@ import Films from './components/films';
 import People from './components/people';
 
 
+
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
       <Switch>
       <Route exact path="/films" component={Films} />
       <Route exact path="/people" component={People} />
+      <Route path="/films/:id" componenent={Films} />
       </Switch>
       
       
